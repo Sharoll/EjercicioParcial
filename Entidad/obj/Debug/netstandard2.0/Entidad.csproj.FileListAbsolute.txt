@@ -1,0 +1,9 @@
+c:\Users\HP\Documents\ProgramacionWeb\Entidad\bin\Debug\netstandard2.0\Entidad.deps.json
+c:\Users\HP\Documents\ProgramacionWeb\Entidad\bin\Debug\netstandard2.0\Entidad.dll
+c:\Users\HP\Documents\ProgramacionWeb\Entidad\bin\Debug\netstandard2.0\Entidad.pdb
+c:\Users\HP\Documents\ProgramacionWeb\Entidad\obj\Debug\netstandard2.0\Entidad.csprojAssemblyReference.cache
+c:\Users\HP\Documents\ProgramacionWeb\Entidad\obj\Debug\netstandard2.0\Entidad.AssemblyInfoInputs.cache
+c:\Users\HP\Documents\ProgramacionWeb\Entidad\obj\Debug\netstandard2.0\Entidad.AssemblyInfo.cs
+c:\Users\HP\Documents\ProgramacionWeb\Entidad\obj\Debug\netstandard2.0\Entidad.csproj.CoreCompileInputs.cache
+c:\Users\HP\Documents\ProgramacionWeb\Entidad\obj\Debug\netstandard2.0\Entidad.dll
+c:\Users\HP\Documents\ProgramacionWeb\Entidad\obj\Debug\netstandard2.0\Entidad.pdb
