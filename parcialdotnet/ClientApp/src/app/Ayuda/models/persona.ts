@@ -8,6 +8,6 @@ export class Persona {
     ciudad: string;
     valorApoyo: number;
     modalidadApoyo: string;
-    fecha: Date;
+    fecha: string;
 
 }

@@ -18,8 +18,8 @@ namespace Datos
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = @"Insert Into Persona (Identificacion,Nombre,Apellido,Sexo,Edad,Departamento,Ciudad,ValorApoyo,Modalidad,Fecha) values 
-                (@Identificacion,@Nombre,@Edad,@Sexo,@Pulsacion)";
+                command.CommandText = @"Insert Into Persona (Identificacion,Nombre,Apellido,Sexo,Edad,Departamento,Ciudad,valorApoyo,Modalidad,Fecha)values 
+                (@Identificacion,@Nombre,@Apellido,@Sexo,@Edad,@Departamento,@Ciudad,@valorApoyo,@Modalidad,@Fecha)";
                 command.Parameters.AddWithValue("@Identificacion", persona.Identificacion);
                 command.Parameters.AddWithValue("@Nombre", persona.Nombre);
                 command.Parameters.AddWithValue("@Apellido", persona.Apellido);
@@ -27,7 +27,7 @@ namespace Datos
                 command.Parameters.AddWithValue("@Edad", persona.Edad);
                 command.Parameters.AddWithValue("@Departamento", persona.Departamento);
                 command.Parameters.AddWithValue("@Ciudad", persona.Ciudad);
-                command.Parameters.AddWithValue("@ValorApoyo", persona.valorApoyo);
+                command.Parameters.AddWithValue("@valorApoyo", persona.valorApoyo);
                 command.Parameters.AddWithValue("@Modalidad", persona.Modalidad);
                 command.Parameters.AddWithValue("@Fecha", persona.Fecha);
                 var filas = command.ExecuteNonQuery();
@@ -44,14 +44,31 @@ namespace Datos
                 dataReader = command.ExecuteReader();
                 if (dataReader.HasRows)
                 {
-                    while (dataReader.Read())
+                     while (dataReader.Read())
                     {
                        Persona persona = DataReaderMapToPerson(dataReader);
                         personas.Add(persona);
-                    }
+                    } 
                 }
             }
             return personas;
+        }
+
+        private Persona DataReaderMapToPerson(SqlDataReader dataReader)
+        {
+            if(!dataReader.HasRows) return null;
+            Persona persona = new Persona();
+            persona.Identificacion = (string)dataReader["Identificacion"];
+            persona.Nombre = (string)dataReader["Nombre"];
+            persona.Apellido = (string)dataReader["Apellido"];
+            persona.Sexo = (string)dataReader["Sexo"];
+            persona.Edad = (int)dataReader["Edad"];
+            persona.Departamento = (string)dataReader["Departamento"];
+            persona.Ciudad = (string)dataReader["Ciudad"];
+            persona.valorApoyo = (int)dataReader["valorApoyo"];
+            persona.Modalidad = (string)dataReader["Modalidad"];
+            persona.Fecha = (string)dataReader["Fecha"];
+            return persona;
         }
        
     }

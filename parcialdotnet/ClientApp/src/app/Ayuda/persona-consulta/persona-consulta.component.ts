@@ -19,7 +19,9 @@ export class PersonaConsultaComponent implements OnInit {
   }
 
   get (){
-    this.personas = this.personaService.get();
+    this.personaService.get().subscribe(result=>{
+      this.personas=result;
+    });
   }
 
 }

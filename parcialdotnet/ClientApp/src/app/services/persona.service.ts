@@ -1,25 +1,36 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, Inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HandleHttpErrorService } from '../@base/handle-http-error.service';
 import { Persona } from '../Ayuda/models/persona';
+import { tap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaService {
 
-  constructor() { }
+  baseUrl: string;
 
-  get(): Persona[] {
-    return JSON.parse(localStorage.getItem('informacion'));
-  }
-    validarPersona (persona:Persona,personas:Persona[]):boolean{
-      for (var i in personas){
-        if (persona.identificacion==personas[i].identificacion){
-          return false;
-        }  
-      }
-      return true;
-    }
-    Tope(persona:Persona,personas:Persona[]):boolean{
+  constructor(
+    
+    private http: HttpClient,
+    @Inject('BASE_URL') baseUrl:string,
+    private handleErrorService: HandleHttpErrorService)
+
+   {
+     this.baseUrl = baseUrl;
+
+   }
+
+  get(): Observable<Persona[]>{
+    return this.http.get<Persona[]>(this.baseUrl + 'api/Persona')
+    .pipe(
+      tap(_ => this.handleErrorService.log('datos enviados')),
+      catchError(this.handleErrorService.handleError<Persona[]>('Consulta Persona', null))
+      );
+  }
+    /*Tope(persona:Persona,personas:Persona[]):boolean{
         var sumador=persona.valorApoyo;
         for(var aux in personas){
           sumador=sumador+personas[aux].valorApoyo;
@@ -29,14 +40,16 @@ export class PersonaService {
         }else{
           return false;
         }
-    }
-    post(persona: Persona) {
-          let personas: Persona[] = [];
-          if (this.get() != null) {
-            personas = this.get();
-          }
-      return this.validarPersona(persona,personas);  
-    }     
+    }*/
+    post(persona: Persona): Observable<Persona> {
+    return this.http.post<Persona>(this.baseUrl + 'api/Persona', persona)
+    .pipe(
+      tap(_ => this.handleErrorService.log('datos enviados')),
+     catchError(this.handleErrorService.handleError<Persona>('Registrar Persona', null))
+    );
+
+ }
+    /*   
      validarTope(persona: Persona) {
           let personas: Persona[] = [];
           if (this.get() != null) {
@@ -50,6 +63,6 @@ export class PersonaService {
           return false;
         }
          
-    } 
+    } */
 
 }

@@ -15,16 +15,20 @@ export class PersonaRegistroComponent implements OnInit {
   ngOnInit() {
     this.persona = new Persona;
   }
+
   add(){
-    if (this.personaService.post(this.persona) == true){
-      if(this.personaService.validarTope(this.persona)==true){
-        alert ('Se registro una persona nueva' + JSON.stringify(this.persona.identificacion));
-      }else{
-        alert ('sobrepaso el tope');
+    this.personaService.post(this.persona).subscribe(p => {
+      if (p != null){
+        alert ('Se registro una persona nueva');
+          this.persona = p;
+      
+        // if(this.personaService.validarTope(this.persona)==true){*/
+        //   alert ('Se registro una persona nueva' + JSON.stringify(this.persona.identificacion));
+        // }else{
+        //   alert ('sobrepaso el tope');
+        // }
       }
-    }else{
-      alert('La persona ya existe')
-    }
+    });
     
   }
 

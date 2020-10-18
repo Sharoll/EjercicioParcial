@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace parcialdotnet
 {
@@ -36,7 +38,7 @@ namespace parcialdotnet
                     {
                         Name = "Sharoll Araujo Velásquez",
                         Email = string.Empty,
-                        //Url = new Uri("https://github.com/Guille36GM/Pulsaciones-Git.git"),
+                        Url = new Uri("https://github.com/Sharoll/EjercicioParcial"),
                     },
                     License = new OpenApiLicense
                     {

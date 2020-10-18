@@ -1,4 +1,4 @@
-c:\Users\HP\Documents\ProgramacionWeb\Logica\bin\Debug\netstandard2.0\Logica.deps.json
+C:\Users\HP\Documents\ProgramacionWeb\Logica\bin\Debug\netstandard2.0\Logica.deps.json
 c:\Users\HP\Documents\ProgramacionWeb\Logica\bin\Debug\netstandard2.0\Logica.dll
 c:\Users\HP\Documents\ProgramacionWeb\Logica\bin\Debug\netstandard2.0\Logica.pdb
 c:\Users\HP\Documents\ProgramacionWeb\Logica\bin\Debug\netstandard2.0\Datos.dll
@@ -9,6 +9,6 @@ c:\Users\HP\Documents\ProgramacionWeb\Logica\obj\Debug\netstandard2.0\Logica.csp
 c:\Users\HP\Documents\ProgramacionWeb\Logica\obj\Debug\netstandard2.0\Logica.AssemblyInfoInputs.cache
 c:\Users\HP\Documents\ProgramacionWeb\Logica\obj\Debug\netstandard2.0\Logica.AssemblyInfo.cs
 c:\Users\HP\Documents\ProgramacionWeb\Logica\obj\Debug\netstandard2.0\Logica.csproj.CoreCompileInputs.cache
-c:\Users\HP\Documents\ProgramacionWeb\Logica\obj\Debug\netstandard2.0\Logica.csproj.CopyComplete
+C:\Users\HP\Documents\ProgramacionWeb\Logica\obj\Debug\netstandard2.0\Logica.csproj.CopyComplete
 c:\Users\HP\Documents\ProgramacionWeb\Logica\obj\Debug\netstandard2.0\Logica.dll
 c:\Users\HP\Documents\ProgramacionWeb\Logica\obj\Debug\netstandard2.0\Logica.pdb
