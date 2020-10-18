@@ -13,9 +13,9 @@ namespace parcialdotnet.Models
         public int Edad { get; set; }
         public string Departamento { get; set; }
         public string Ciudad { get; set; }
-        public int valorApoyo { get; set; }
+        public decimal valorApoyo { get; set; }
         public string Modalidad { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
     }
 
     public class PersonaViewModel : PersonaInputModel

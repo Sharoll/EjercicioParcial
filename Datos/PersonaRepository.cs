@@ -18,8 +18,8 @@ namespace Datos
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = @"Insert Into Persona (Identificacion,Nombre,Apellido,Sexo,Edad,Departamento,Ciudad,valorApoyo,Modalidad,Fecha)values 
-                (@Identificacion,@Nombre,@Apellido,@Sexo,@Edad,@Departamento,@Ciudad,@valorApoyo,@Modalidad,@Fecha)";
+                command.CommandText = @"Insert Into Persona(Identificacion,Nombre,Apellido,Sexo,Edad,Departamento,Ciudad,valorApoyo,Modalidad,Fecha)values 
+                 (@Identificacion,@Nombre,@Apellido,@Sexo,@Edad,@Departamento,@Ciudad,@valorApoyo,@Modalidad,@Fecha)";
                 command.Parameters.AddWithValue("@Identificacion", persona.Identificacion);
                 command.Parameters.AddWithValue("@Nombre", persona.Nombre);
                 command.Parameters.AddWithValue("@Apellido", persona.Apellido);
@@ -40,7 +40,7 @@ namespace Datos
             List<Persona> personas = new List<Persona>();
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "Select * from persona ";
+                command.CommandText = "Select * from Persona ";
                 dataReader = command.ExecuteReader();
                 if (dataReader.HasRows)
                 {
@@ -65,9 +65,9 @@ namespace Datos
             persona.Edad = (int)dataReader["Edad"];
             persona.Departamento = (string)dataReader["Departamento"];
             persona.Ciudad = (string)dataReader["Ciudad"];
-            persona.valorApoyo = (int)dataReader["valorApoyo"];
+            persona.valorApoyo = (decimal)dataReader["valorApoyo"];
             persona.Modalidad = (string)dataReader["Modalidad"];
-            persona.Fecha = (string)dataReader["Fecha"];
+            persona.Fecha = (DateTime)dataReader["Fecha"];
             return persona;
         }
        
